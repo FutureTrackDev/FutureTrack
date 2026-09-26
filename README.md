@@ -18,9 +18,10 @@ Technologies Used
 - HTML
 - CSS
 - JavaScript
-- Firebase
 - GitHub Pages
 
 Purpose
 
 FutureTrack was developed as a school research and system development project to explore how a web-based platform can improve the enrollment process and provide career guidance for incoming students.
+
+https://FutureTrackDev.github.io/FutureTrack/
