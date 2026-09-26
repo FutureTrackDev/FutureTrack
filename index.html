@@ -1347,38 +1347,34 @@ mobileThemeToggle.addEventListener(
 );  
   
   
-const sections = document.querySelectorAll("section");  
-const navLinksItems = document.querySelectorAll(".nav-item");  
-  
-window.addEventListener("scroll", function(){  
-  
-    let currentSection = "";  
-  
-    sections.forEach(function(section){  
-  
-        const sectionTop = section.offsetTop - 100;  
-        const sectionHeight = section.offsetHeight;  
-  
-        if(  
-            window.scrollY >= sectionTop &&  
-            window.scrollY < sectionTop + sectionHeight  
-        ){  
-            currentSection = section.getAttribute("id");  
-        }  
-  
-    });  
-  
-    navLinksItems.forEach(function(link){  
-  
-        link.classList.remove("active");  
-  
-        if(link.getAttribute("href") === "#" + currentSection){  
-            link.classList.add("active");  
-        }  
-  
-    });  
-  
-});  
+const sections = document.querySelectorAll("section");
+const navLinksItems = document.querySelectorAll(".nav-item");
+
+window.addEventListener("scroll", function(){
+
+    let currentSection = "";
+
+    sections.forEach(function(section){
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop <= 120 && sectionTop + section.offsetHeight > 120){
+            currentSection = section.getAttribute("id");
+        }
+
+    });
+
+    navLinksItems.forEach(function(link){
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + currentSection){
+            link.classList.add("active");
+        }
+
+    });
+
+});
    
   
   
